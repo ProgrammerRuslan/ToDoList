@@ -1,0 +1,117 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+button:focus, input:focus {
+  outline: none;
+}
+
+button:hover, input:hover {
+  cursor: pointer;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  overflow: auto;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 100px;
+  font-family: sans-serif;
+}
+
+.todolist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #80a87b;
+  border-radius: 20px;
+  padding: 20px 40px;
+  min-height: 300px;
+}
+
+.todolist-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.todolist-input {
+  width: 400px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.todolist-btn {
+  background: url(../img/add-icon.svg) no-repeat center;
+  background-size: 40px;
+  height: 20px;
+  width: 20px;
+  border: none;
+}
+
+.todolist-confirm {
+  background: url(../img/confirm-icon.svg) no-repeat center;
+  background-size: 20px;
+  height: 20px;
+  width: 20px;
+  border: none;
+}
+
+.todolist-delete {
+  background: url(../img/delete-icon.svg) no-repeat center;
+  background-size: 20px;
+  height: 20px;
+  width: 20px;
+  border: none;
+  margin-left: 5px;
+}
+
+.todolist-block {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.active {
+  text-decoration: line-through;
+}
+/*# sourceMappingURL=main.css.map */
