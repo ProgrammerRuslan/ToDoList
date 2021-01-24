@@ -1,5 +1,13 @@
 document.querySelector('#todolist-btn').addEventListener('click', () => {
-  if (document.querySelector('#todolist-input').value != ''){
+  addBlock()
+})
+document.querySelector('#todolist-input').addEventListener('keydown', function (event) {
+  if (event.code == 'Enter') {
+    addBlock()
+  }
+});
+function addBlock(){
+  if (document.querySelector('#todolist-input').value != '') {
     let todolistBlock = document.createElement('div')
     let todolistText = document.createElement('div')
     let todolistBtns = document.createElement('div')
@@ -21,9 +29,7 @@ document.querySelector('#todolist-btn').addEventListener('click', () => {
       todolistBlock.remove()
     })
   }
-  else{
+  else {
     alert('Fill in the field!')
-  }
-
-  
-})
+  } 
+}
