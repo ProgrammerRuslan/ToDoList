@@ -1,40 +1,39 @@
-document.querySelector('#todolist-btn').addEventListener('click', () => {
-  addBlock()
+const $addTaskBtn = document.getElementById('todolist-btn')
+const $toDoListInput = document.getElementById('todolist-input')
+const $toDoList = document.getElementById('todolist')
+
+$addTaskBtn.addEventListener('click', addBlock)
+
+$toDoListInput.addEventListener('keydown', e => {
+  if(e.code == 'Enter'){
+    addBlock() 
+  }
 })
-document.querySelector('#todolist-input').addEventListener('keydown', function (event) {
-  if (event.code == 'Enter') {
-    addBlock()
-  }
-});
+
+function doneTask() {
+  // document.querySelectorAll('.todolist-block')
+}
+
+function removeTask() {
+// document.querySelectorAll('.todolist-block')
+}
+
+function createItem(text) {
+  return `
+  <div class='todolist-block' data-id=${id}>
+    <div class='todolist-text'>${text}</div>
+    <div class='todolist-btns'>
+      <button class='todolist-confirm'></button>
+      <button class='todolist-delete'></button>
+    </div>
+  </div>  
+  `
+}
+
 function addBlock(){
-  if (document.querySelector('#todolist-input').value != '') {
-    let todolistBlock = document.createElement('div')
-    let todolistText = document.createElement('div')
-    let todolistBtns = document.createElement('div')
-    let todolistConfirm = document.createElement('button')
-    let todolistDelete = document.createElement('button')
-
-    todolistBlock.classList.add('todolist-block')
-    todolistText.classList.add('todolist-text')
-    todolistBtns.classList.add('todolist-btns')
-    todolistConfirm.classList.add('todolist-confirm')
-    todolistDelete.classList.add('todolist-delete')
-
-    todolistText.innerText = document.querySelector('#todolist-input').value
-
-    todolistBtns.append(todolistConfirm, todolistDelete)
-    todolistBlock.append(todolistText, todolistBtns)
-    document.querySelector('#todolist').append(todolistBlock)
-
-    todolistConfirm.addEventListener('click', () => {
-      todolistText.classList.add('active')
-    })
-
-    todolistDelete.addEventListener('click', () => {
-      todolistBlock.remove()
-    })
-  }
-  else {
+  if ($toDoListInput.value.trim() !== '') {
+    $toDoList.insertAdjacentElement('beforeend', createItem($toDoListInput.value))
+  } else {
     alert('Fill in the field!')
   } 
 }
